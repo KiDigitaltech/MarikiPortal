@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dashboard — Mariki Family Portal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div id="topbar"></div>
+    <section class="glass p-6 fade-in mb-6">
+      <h1 class="text-2xl font-bold" id="welcome">Welcome</h1>
+      <p class="opacity-70 text-sm" id="subWelcome">Loading...</p>
+    </section>
+
+    <section class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div class="glass p-5"><div class="text-xs opacity-70">Total members</div><div class="text-2xl font-bold" id="statMembers">—</div></div>
+      <div class="glass p-5"><div class="text-xs opacity-70">Contributions</div><div class="text-2xl font-bold" id="statContribs">—</div></div>
+      <div class="glass p-5"><div class="text-xs opacity-70">Announcements</div><div class="text-2xl font-bold" id="statNews">—</div></div>
+      <div class="glass p-5"><div class="text-xs opacity-70">Total raised</div><div class="text-2xl font-bold" id="statTotal">—</div></div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-4 mb-6">
+      <a href="members.html" class="glass p-5 hover:scale-[1.01] transition"><i data-lucide="users"></i><div class="font-semibold mt-2">Members</div><p class="text-sm opacity-70">Browse the directory</p></a>
+      <a href="contributions.html" class="glass p-5 hover:scale-[1.01] transition"><i data-lucide="hand-coins"></i><div class="font-semibold mt-2">Contributions</div><p class="text-sm opacity-70">View & submit</p></a>
+      <a href="announcements.html" class="glass p-5 hover:scale-[1.01] transition"><i data-lucide="megaphone"></i><div class="font-semibold mt-2">Announcements</div><p class="text-sm opacity-70">Latest news</p></a>
+    </section>
+
+    <section class="glass p-5">
+      <div class="flex items-center justify-between mb-3">
+        <div class="font-semibold">Recent activity</div>
+        <button class="btn-ghost text-sm" id="exportBtn"><i data-lucide="download" class="w-4 h-4 inline"></i> Export JSON</button>
+      </div>
+      <div id="activity" class="space-y-2 text-sm">
+        <div class="skeleton h-6"></div><div class="skeleton h-6"></div><div class="skeleton h-6"></div>
+      </div>
+    </section>
+
+    <div id="bottombar"></div>
+  </div>
+<script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

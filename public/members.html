@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Members — Mariki Family Portal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div id="topbar"></div>
+
+    <section class="glass p-5 mb-5 flex flex-col md:flex-row gap-3 md:items-end fade-in">
+      <div class="flex-1"><label>Search</label><input id="search" class="input" placeholder="Name, region, district..."></div>
+      <div><label>Gender</label>
+        <select id="filterGender" class="input"><option value="">All</option><option>Male</option><option>Female</option></select>
+      </div>
+      <button class="btn-ghost" id="exportCsv"><i data-lucide="download" class="w-4 h-4 inline"></i> CSV</button>
+    </section>
+
+    <section id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="glass p-5 skeleton h-40"></div><div class="glass p-5 skeleton h-40"></div><div class="glass p-5 skeleton h-40"></div>
+    </section>
+
+    <div id="bottombar"></div>
+  </div>
+<script type="module" src="js/members.js"></script>
+</body>
+</html>

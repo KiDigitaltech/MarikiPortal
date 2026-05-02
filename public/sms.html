@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SMS Broadcast — Mariki Family Portal</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div id="topbar"></div>
+
+    <h1 class="text-xl font-bold mb-4 flex items-center gap-2"><i data-lucide="send"></i> SMS Broadcast</h1>
+
+    <section class="grid lg:grid-cols-3 gap-5">
+      <!-- Recipient sources -->
+      <div class="glass p-5 lg:col-span-1">
+        <div class="font-semibold mb-3">Filter members</div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><label>From</label><input type="date" id="fromDate" class="input"></div>
+          <div><label>To</label><input type="date" id="toDate" class="input"></div>
+        </div>
+        <div class="mt-3"><label>Region</label><select id="regionFilter" class="input"><option value="">Any</option></select></div>
+        <button class="btn-ghost mt-3 w-full" id="addFiltered"><i data-lucide="user-plus" class="w-4 h-4 inline"></i> Add filtered members</button>
+
+        <hr class="my-4 border-white/10"/>
+        <div class="font-semibold mb-2">Manual numbers</div>
+        <textarea id="manual" class="input" rows="3" placeholder="+255700000000, +255711111111"></textarea>
+        <button class="btn-ghost mt-2 w-full" id="addManual"><i data-lucide="plus" class="w-4 h-4 inline"></i> Add</button>
+
+        <hr class="my-4 border-white/10"/>
+        <div class="font-semibold mb-2">Excel upload</div>
+        <input id="excel" type="file" class="input" accept=".xlsx,.xls,.csv">
+        <p class="text-xs opacity-70 mt-1">First column should contain phone numbers.</p>
+      </div>
+
+      <!-- Composer -->
+      <div class="glass p-5 lg:col-span-2 flex flex-col">
+        <div class="font-semibold mb-2">Message</div>
+        <textarea id="message" class="input flex-1" rows="6" maxlength="1600" placeholder="Write your SMS..."></textarea>
+        <div class="flex items-center justify-between text-xs opacity-80 mt-2">
+          <div><span id="chars">0</span> / 1600 chars</div>
+          <div><span id="segs">0</span> SMS segment(s)</div>
+        </div>
+
+        <div class="mt-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-semibold">Recipients (<span id="count">0</span>)</div>
+            <button class="btn-ghost text-xs" id="clearAll"><i data-lucide="x" class="w-3 h-3 inline"></i> Clear</button>
+          </div>
+          <div id="recipients" class="flex flex-wrap gap-2 max-h-48 overflow-auto scroll-hide"></div>
+        </div>
+
+        <div class="mt-5 flex justify-end gap-2">
+          <button id="sendBtn" class="btn-primary inline-flex items-center gap-2"><i data-lucide="send" class="w-4 h-4"></i> Send broadcast</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass p-5 mt-5">
+      <div class="font-semibold mb-3"><i data-lucide="history" class="w-4 h-4 inline"></i> Recent broadcasts</div>
+      <div id="logs" class="space-y-2 max-h-72 overflow-auto scroll-hide"></div>
+    </section>
+
+    <div id="bottombar"></div>
+  </div>
+<script type="module" src="js/sms.js"></script>
+</body>
+</html>

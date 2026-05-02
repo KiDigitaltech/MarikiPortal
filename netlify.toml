@@ -1,0 +1,8 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/sendSMS"
+  to = "/.netlify/functions/sendSMS"
+  status = 200

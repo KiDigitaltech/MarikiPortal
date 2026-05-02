@@ -1,0 +1,6 @@
+{
+  "name": "mariki-functions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Netlify functions for Mariki Family Portal"
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mariki Family Portal</title>
+<meta name="description" content="Mariki Family Portal — members, contributions, announcements and SMS broadcast." />
+<link rel="icon" href="assets/favicon.svg" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="min-h-screen">
+  <main class="max-w-5xl mx-auto px-4 py-16 fade-in">
+    <div class="glass p-10 text-center pop-in">
+      <div class="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6"
+           style="background:linear-gradient(135deg,#6366f1,#06b6d4)">
+        <i data-lucide="home" class="text-white"></i>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-3">Mariki Family Portal</h1>
+      <p class="opacity-80 max-w-xl mx-auto mb-8">A modern, secure portal for our family — members, contributions, announcements and broadcast SMS in one premium place.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="login.html" class="btn-primary inline-flex items-center gap-2"><i data-lucide="log-in" class="w-4 h-4"></i>Login</a>
+        <a href="register.html" class="btn-ghost inline-flex items-center gap-2"><i data-lucide="user-plus" class="w-4 h-4"></i>Register</a>
+      </div>
+    </div>
+
+    <section class="grid md:grid-cols-3 gap-4 mt-8">
+      <div class="glass p-5 fade-in"><i data-lucide="users" class="mb-2"></i><div class="font-semibold">Members</div><p class="text-sm opacity-70">Beautiful directory with realtime updates.</p></div>
+      <div class="glass p-5 fade-in"><i data-lucide="hand-coins" class="mb-2"></i><div class="font-semibold">Contributions</div><p class="text-sm opacity-70">Track family contributions with receipts.</p></div>
+      <div class="glass p-5 fade-in"><i data-lucide="send" class="mb-2"></i><div class="font-semibold">SMS Broadcast</div><p class="text-sm opacity-70">Reach everyone via Beem Africa SMS.</p></div>
+    </section>
+  </main>
+<script>lucide.createIcons();</script>
+</body>
+</html>

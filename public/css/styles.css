@@ -1,0 +1,69 @@
+/* Mariki Family Portal — global styles */
+:root{
+  --bg1:#0f172a; --bg2:#1e293b; --accent:#6366f1; --accent2:#06b6d4;
+  --glass: rgba(255,255,255,.08); --glass-br: rgba(255,255,255,.18);
+  --text:#e2e8f0; --muted:#94a3b8;
+}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 0%, rgba(99,102,241,.25), transparent 60%),
+    radial-gradient(1000px 500px at 100% 100%, rgba(6,182,212,.20), transparent 60%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+  min-height:100vh;
+}
+body.light{
+  --bg1:#f1f5f9; --bg2:#e2e8f0; --text:#0f172a; --muted:#475569;
+  --glass:rgba(255,255,255,.6); --glass-br:rgba(15,23,42,.08);
+}
+.glass{
+  background:var(--glass);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border:1px solid var(--glass-br);
+  border-radius:1rem;
+  box-shadow:0 10px 30px -10px rgba(0,0,0,.35);
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff; border-radius:.75rem; padding:.65rem 1.1rem;
+  font-weight:600; transition:transform .15s ease, box-shadow .2s;
+  box-shadow:0 8px 20px -6px rgba(99,102,241,.55);
+}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.6; cursor:not-allowed; transform:none}
+.btn-ghost{
+  border:1px solid var(--glass-br); border-radius:.75rem;
+  padding:.55rem 1rem; color:var(--text);
+}
+.input{
+  width:100%; background:rgba(255,255,255,.06); color:var(--text);
+  border:1px solid var(--glass-br); border-radius:.7rem;
+  padding:.65rem .85rem; outline:none; transition:border-color .15s, background .15s;
+}
+.input:focus{border-color:var(--accent); background:rgba(255,255,255,.1)}
+body.light .input{background:#fff}
+label{font-size:.85rem; color:var(--muted); margin-bottom:.25rem; display:block}
+.fade-in{animation:fadeIn .5s ease both}
+.pop-in{animation:popIn .35s cubic-bezier(.2,.9,.3,1.4) both}
+@keyframes fadeIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+@keyframes popIn{from{opacity:0; transform:scale(.92)} to{opacity:1; transform:none}}
+.skeleton{
+  background:linear-gradient(90deg, rgba(255,255,255,.05), rgba(255,255,255,.18), rgba(255,255,255,.05));
+  background-size:200% 100%; animation:shimmer 1.4s infinite; border-radius:.6rem;
+}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.loader-overlay{position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; z-index:60}
+.loader-overlay.active{display:flex}
+.spinner{width:54px; height:54px; border-radius:50%; border:4px solid rgba(255,255,255,.2); border-top-color:#fff; animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bottom-nav{position:fixed; bottom:0; left:0; right:0; z-index:40; display:none}
+@media (max-width: 768px){ .bottom-nav{display:flex} .desktop-nav{display:none} }
+.toast{position:fixed; right:1rem; top:1rem; z-index:70}
+.badge{display:inline-flex; align-items:center; justify-content:center; min-width:1.2rem; height:1.2rem; padding:0 .35rem; border-radius:9999px; background:#ef4444; color:#fff; font-size:.7rem; font-weight:700}
+.whatsapp-fab{position:fixed; right:1rem; bottom:5rem; z-index:45; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 24px -8px rgba(37,211,102,.6)}
+@media (min-width:769px){.whatsapp-fab{bottom:1.25rem}}
+.tab-active{background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff}
+.scroll-hide::-webkit-scrollbar{display:none}
