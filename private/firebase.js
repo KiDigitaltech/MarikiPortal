@@ -15,12 +15,12 @@ import {
 
 // TODO: Replace with your actual Firebase project config
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "0000000000",
-  appId: "1:0000:web:abcdef"
+  apiKey: "AIzaSyBjs0a4aelsMMqYAQxFch6pxYB0tkJLfGE",
+  authDomain: "mariki-3497a.firebaseapp.com",
+  projectId: "mariki-3497a",
+  storageBucket: "mariki-3497a.firebasestorage.app",
+  messagingSenderId: "407565484293",
+  appId: "1:407565484293:web:b3717da3a5af987056f76c"
 };
 
 export const app = initializeApp(firebaseConfig);
